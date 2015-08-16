@@ -12,9 +12,17 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
+    /* PROPERTY OBSERVER
+    * Observes and responds to changes in a property's value. There are two types of property observers,
+    * willSet - which is called right before a value is stored,
+    * didSet - which is called right after a value is stored.
+    * Property observers are called everytime a property's values are set, even if the value is the same.
+    * We can use these observers to execute code whenever a value is about to be set, or has been set.
+    */
+    
     var detailItem: AnyObject? {
         didSet {
+            // Every time a value is assigned, self.configureView() is called right after
             // Update the view.
             self.configureView()
         }
@@ -32,6 +40,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // Method called again after view is fully loaded
         self.configureView()
     }
 
