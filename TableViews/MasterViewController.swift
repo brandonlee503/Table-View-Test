@@ -39,6 +39,17 @@ class MasterViewController: UITableViewController {
         }
     }
 
+    /* HIGH LEVEL OVERVIEW
+     * Tableviews are instances of the UITableView controller class.  UITableViewController conforms to UITableView
+     * data source protocol, which helps the tableview controller construct the view, by communicating with the app's data model.
+     * The protocol has two required methods, one that helps the tableview determine how many rows to create, which
+     * it does by querying the data model for its size.  And a second that creates a cell for a particular row, supplies
+     * the relevant information from the data model, and then adds it to the row.  The tableview knows what info pertains
+     * to which row by using an IndexPath.  An IndexPath associated with the tableview stores indexes for specific sections
+     * and rows in the tableview.  The tableview then uses this IndexPath to retrieve data from the data model and populate
+     * the view.
+     */
+    
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
